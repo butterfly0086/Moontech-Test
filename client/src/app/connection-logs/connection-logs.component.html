@@ -1,0 +1,25 @@
+<div class="card mt-5">
+    <div class="card-header">
+        Connection Logs
+    </div>
+
+    <div class="card-body table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>User</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let log of connectionLogs">
+                    <td>{{ log.date | date:'medium' }}</td>
+                    <td>{{ log.user && log.user.username }}</td>
+                    <td>{{ log.logIn ? 'Logged In' : 'Logged Out' }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
